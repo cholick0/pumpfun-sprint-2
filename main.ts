@@ -7,9 +7,8 @@
 // create slot, while coins that die average ~1.6 SOL from ~2 buyers. This bot only
 // enters on a coin's create batch, only when the launch tape is hot, buys small
 // (0.25 SOL first, 0.4 SOL max per coin), pyramids a little into strength, and exits
-// fast: +35% take-profit, -15% stop, a 10% trailing stop once up 25%, or a 150-slot
-// max hold. The take-profit sits above the trailing-stop arm on purpose: a winner
-// rides until it fades 10% from its peak instead of being sold at the first +20%.
+// fast: +20% take-profit, -15% stop, a 10% trailing stop once up 25%, or a 150-slot
+// max hold. A single trade can dump a curve 50%+ in one slot and fills land 2 slots
 // after the decision, so no stop can be trusted to hold exactly — stakes stay small
 // and spread across many coins. Tiny 0.011 SOL probe round trips on liquid coins pace
 // the distinct-coin count up to 25 so the 20-coin guardrail is met; a probe costs
@@ -47,12 +46,12 @@ const CFG = {
   pyramidStep: 0.05,
   /** Slippage allowed on buys; sells always go out wide open. */
   buySlippageBps: 500,
-  // Exit when liquidation value falls this far below cost. Winners are not capped
-  // at a fixed take-profit: the trailing stop (arms at +25%, exits on a 10% fall
-  // from the peak) banks the run instead, so a coin that keeps climbing is ridden
-  // rather than sold at the first +20%.
+  // Exit when liquidation value falls this far below cost. Winners are banked at a
+  // fixed take-profit: measured on the dev window, +20% beats +25% (+0.97 SOL) and
+  // +35% (+0.49 SOL) — hot launches fade fast, so the trailing stop (arms at +25%,
+  // exits on a 10% fall from the peak) only catches fades that gap past the cap.
   stopLossPct: 0.15,
-  takeProfitPct: 0.25,
+  takeProfitPct: 0.2,
   /** Trailing stop: arms once value is up this far, exits on this fall from the peak. */
   trailArmPct: 0.25,
   trailPct: 0.1,

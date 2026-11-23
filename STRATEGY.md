@@ -57,4 +57,12 @@ probe costs ~0.0005 SOL.
 
 ## This repo's grades
 
-(To be filled in after grading — see the commit history for the revision pass.)
+- v1 (take-profit +20%): net PnL **+0.991 SOL** (52 round trips, 28 wins / 54%,
+  max drawdown 2.6%, 90% interval +0.28 .. +1.67 SOL). At 2x fees +0.74 SOL.
+  Deterministic: L1 regrade reproduced byte for byte.
+- Revision pass (take-profit raised to +35% so winners ride to the trailing stop):
+  **+0.493 SOL** (52 round trips, 50% win rate, max drawdown 3.9%; ex-top-3 only
+  +0.01 SOL) — the wider cap gave back half the gains, so it was reverted.
+- Probe (take-profit +25%): **+0.966 SOL** — close, but still below +20%.
+- Final (take-profit back to +20%): re-graded below; the +20% cap is the measured
+  best of the three, so the revision pass kept it.

@@ -17,8 +17,9 @@ The entry point is `main.ts` (Node 22, stdlib only, erasable TypeScript). The gr
 ## Local grade (dev window)
 
 ```
-+0.83 SOL net PnL on the kit's 24h dev window (52 round trips, 28 wins, 2.6% max drawdown),
++0.99 SOL net PnL on the kit's 24h dev window (52 round trips, 28 wins, 2.6% max drawdown),
 +0.19 SOL per 6h slice on average (3 of 4 slices positive, 25-27 distinct coins per slice).
+Stress test: 20 block surrogates, median +0.13 SOL (p10 −0.38, p90 +0.47), 6 of 20 lost money.
 ```
 
 Built by an AI agent for a make.fun bounty.

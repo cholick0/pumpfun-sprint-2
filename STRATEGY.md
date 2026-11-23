@@ -66,3 +66,13 @@ probe costs ~0.0005 SOL.
 - Probe (take-profit +25%): **+0.966 SOL** — close, but still below +20%.
 - Final (take-profit back to +20%): re-graded below; the +20% cap is the measured
   best of the three, so the revision pass kept it.
+- Final grade (commit dddc49e): net PnL **+0.991 SOL**, 90% interval +0.28 ..
+  +1.67 SOL, 127 fills over 52 coins, 52 round trips, 28 wins / 54%, max
+  drawdown 2.6%. At 2x fees +0.74 SOL. Top 3 coins made 35% of the gains; without
+  them +0.51 SOL. Deterministic: L1 regrade reproduced byte for byte
+  (action_log_sha256 f00fa93724f887161e235a8a063edeb0fc547e14fc7a1866546f2a0573977255).
+- Stress test (20 block surrogates of the dev window): median +0.13 SOL, p10
+  −0.38, p90 +0.47 SOL; 6 of 20 lost money; the dev score (+0.99) sits above all
+  20 copies. Honest read: the dev score leans on this window's own coins — the
+  final window is a different 6h slice, so the median surrogate (+0.13 SOL) is the
+  more sober expectation, still positive.

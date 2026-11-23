@@ -52,7 +52,7 @@ const CFG = {
   // from the peak) banks the run instead, so a coin that keeps climbing is ridden
   // rather than sold at the first +20%.
   stopLossPct: 0.15,
-  takeProfitPct: 0.35,
+  takeProfitPct: 0.25,
   /** Trailing stop: arms once value is up this far, exits on this fall from the peak. */
   trailArmPct: 0.25,
   trailPct: 0.1,
